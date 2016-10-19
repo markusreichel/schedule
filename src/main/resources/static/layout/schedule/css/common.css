@@ -1,0 +1,11 @@
+html body div.container {
+	margin-top: 5px;
+}
+
+html body div.container div.header nav.navbar {
+	margin-bottom: 0px;
+}
+
+html body div.container div.main {
+	margin-top: 20px;
+}
