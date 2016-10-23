@@ -94,3 +94,10 @@
 		</div>
 	</body>
 </#macro>
+
+<#macro page title scripts=[] styles=[]>
+	<@head title=title scripts=scripts styles=styles />
+	<@body>
+		<#nested />
+	</@body>
+</#macro>
