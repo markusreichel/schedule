@@ -10,8 +10,6 @@ import org.reichel.schedule.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
@@ -29,14 +27,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 			throw new UsernameNotFoundException("Bad credentials");
 		}
 		return new CustomUserDetails(user);
-	}
-
-	@Override
-	public void logout() {
-		SecurityContext securityContext = SecurityContextHolder.getContext();
-		if(securityContext != null && securityContext.getAuthentication() != null) {
-			securityContext.getAuthentication().setAuthenticated(false);
-		}
 	}
 
 	private final static class CustomUserDetails implements UserDetails {

@@ -68,7 +68,7 @@
 							<li class="dropdown-header">User</li>
 							<li><a href="#">Profile</a></li>
 							<li role="separator" class="divider"></li>
-							<li><a href="<@spring.url relativeUrl='/login?logout' />">logout</a></li>
+							<li><a href="<@spring.url relativeUrl='/logout' />">logout</a></li>
 						</ul>
 					</li>
 				</ul>
