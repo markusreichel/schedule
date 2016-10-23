@@ -1,5 +1,7 @@
 package org.reichel.schedule.business;
 
+import java.util.List;
+
 import org.apache.commons.codec.digest.DigestUtils;
 import org.reichel.schedule.dao.UserDao;
 import org.reichel.schedule.domain.User;
@@ -39,5 +41,10 @@ public class UserBusinessImpl implements UserBusiness {
 	public User findByLogin(String login) {
 		Assert.hasText(login, "Login cannot be empty.");
 		return this.userDao.findByLogin(login);
+	}
+
+	@Override
+	public List<User> findAll() {
+		return this.userDao.findAll();
 	}
 }
